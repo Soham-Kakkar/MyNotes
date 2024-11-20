@@ -26,9 +26,8 @@ const NotesList: React.FC<{ username: string }> = ({ username }) => {
   }, [username, notesList]);
 
   const handleCreateNote = async () => {
-    const newNote = await createNote({ username: username, title: "Untitled Note", content: "Write something..." });
-    notesList.push(newNote)
-    setSelectedNote(newNote);
+    await createNote({ username: username, title: "Untitled Note", content: "Write something..." });
+    await getNotes(username);
   }
 
   // Refs to preserve cursor position
@@ -66,10 +65,8 @@ const NotesList: React.FC<{ username: string }> = ({ username }) => {
 
       if (savePromise instanceof Promise) {
         savePromise
-          .then(success => showPopup(success ? 'Saved Successfully' : 'Save Failed', success))
+          .then(success => showPopup(success ? 'Saved' : 'Save Failed', success))
           .catch(() => showPopup('Save Failed', false));
-      } else {
-        console.error('Save did not return a Promise');
       }
     }
   };
@@ -77,8 +74,6 @@ const NotesList: React.FC<{ username: string }> = ({ username }) => {
     try {
       await deleteNote(selectedNote._id);
       setSelectedNote(null);
-      const updatedNotes = await getNotes(username);
-      setNotesList(updatedNotes);
     } catch (error) {
       setError(error as Error);
     }
@@ -91,8 +86,6 @@ const NotesList: React.FC<{ username: string }> = ({ username }) => {
     tempDiv.innerHTML = html;
     // Get the text content
     let text = tempDiv.innerText || tempDiv.textContent || '';
-
-    // Remove special characters (optional)
     text = text.replace(/[^a-zA-Z0-9\s.,!?'-]/g, ''); // Keeps letters, numbers, and basic punctuation
 
     return text.trim();
