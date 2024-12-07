@@ -6,7 +6,7 @@ export interface NoteData {
     username?: string;
     userId?: string;
     title: string;
-    content: string;
+    content?: string;
     createdAt?: Date;
     updatedAt?: Date;
   }
@@ -40,7 +40,7 @@ export class NotesAPI {
   
     static async modifyNote(data: { id: string; title: string; content: string }): Promise<NoteData> {
       const response = await fetch(`${API_URL}/notes/modify-note`, {
-        method: 'PUT', // Changed to PUT for modifying resources
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },

@@ -11,7 +11,7 @@ interface Note extends Document {
 const NoteSchema = new Schema<Note>({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true }, // References the User model
   title: { type: String, required: true },
-  content: { type: String, required: true },
+  content: { type: String },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });

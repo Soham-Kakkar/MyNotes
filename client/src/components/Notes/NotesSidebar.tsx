@@ -2,7 +2,7 @@
 import React from 'react';
 import NoteItem from './NoteItem';
 
-const NotesSidebar: React.FC<{ notesList: any[], onSelectNote: (note: any) => void, onCreateNote: () => void, selectedNoteId: string | null }> = ({ notesList, onSelectNote, onCreateNote, selectedNoteId }) => {
+const NotesSidebar: React.FC<{ notesList: any[], onSelectNote: (note: any) => void, onCreateNote: () => void, onDeleteNote: () => void, selectedNoteId: string | null }> = ({ notesList, onSelectNote, onCreateNote, onDeleteNote, selectedNoteId }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -22,7 +22,8 @@ const NotesSidebar: React.FC<{ notesList: any[], onSelectNote: (note: any) => vo
                 note={note}
                 onSelectNote={onSelectNote}
                 isSelected={selectedNoteId === note._id}
-              />
+                onDeleteNote={onDeleteNote}
+          />
             ))}
           </ul>
         </div>

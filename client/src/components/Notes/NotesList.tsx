@@ -27,7 +27,7 @@ const NotesPage: React.FC<{ username: string }> = ({ username }) => {
   }, [username]);
 
   const handleCreateNote = async () => {
-    await NotesAPI.createNote({ username, title: "Untitled Note", content: "Write something..." });
+    await NotesAPI.createNote({ username, title: "Untitled Note", content: "" });
     await getNoteList();
   };
 
@@ -61,6 +61,7 @@ const NotesPage: React.FC<{ username: string }> = ({ username }) => {
         notesList={notesList}
         onSelectNote={setSelectedNote}
         onCreateNote={handleCreateNote}
+        onDeleteNote={handleDeleteNote}
         selectedNoteId={selectedNote?._id || null}
       />
       {selectedNote && (

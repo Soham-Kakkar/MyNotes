@@ -58,6 +58,11 @@
   box-shadow: var(--box-shadow);
 }
 
+.note-item-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .note-item:hover {
   background-color: var(--hover-color);
 }
