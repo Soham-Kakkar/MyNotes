@@ -1,0 +1,196 @@
+
+.notes-container {
+  display: flex;
+  height: calc(100vh - 4rem);
+  font-family: 'Open Sans', sans-serif;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: var(--secondary-background);
+  border-right: 1px solid var(--hover-color);
+  width: 100%;
+  max-width: 100%;
+}
+
+.sidebar-header {
+  height: 3rem;
+  background-color: var(--secondary-background);
+  padding: 10px;
+  border-bottom: 1px solid var(--hover-color);
+}
+
+.new-note-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.new-note-btn:hover {
+  filter: brightness(98%);
+  transform: scale(1.02);
+}
+
+.notes-list-container {
+  height: calc(100vh - 9rem);
+  overflow-y: auto;
+}
+
+.notes-list {
+  list-style: none;
+  padding: 20px;
+}
+
+.note-item {
+  padding: 15px;
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: var(--secondary-background);
+  box-shadow: var(--box-shadow);
+}
+
+.note-item:hover {
+  background-color: var(--hover-color);
+}
+
+.note-item.selected {
+  background-color: var(--hover-color);
+  box-shadow: var(--box-shadow);
+}
+
+.note-detail-placeholder {
+  display: none;
+}
+
+.note-detail {
+  flex: 1;
+  padding: 1%;
+  background-color: var(--secondary-background);
+  width: 98%;
+  z-index: 2;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding-top: 2em;
+  overflow-y: auto;
+}
+
+.note-content {
+  flex: 1;
+  width: 100%;
+  padding-top: 2em;
+  max-height: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.note-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  outline: none;
+  font-weight: bold;
+  display: inline;
+}
+
+.note-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  outline: none;
+  color: var(--text-color);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note-body:empty:before {
+  content: 'Write something...';
+  color: #888;
+  font-style: italic;
+}
+.note-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-options {
+  display: inline;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.option-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  color: var(--text-color);
+}
+
+.option-btn:hover {
+  opacity: 1;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0.5;
+  font-size: 1.5rem;
+  margin-top: 100px;
+}
+
+/* Desktop styles */
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    max-width: 20%;
+    min-width: 400px;
+  }
+
+  .note-detail {
+    width: 80%;
+    position: relative;
+    top: 0;
+  }
+
+  .note-content {
+    overflow-y: auto;
+  }
+
+  .note-detail-placeholder {
+    display: block;
+  }
+
+}
+
+/* Styles for text Formatting
+
+.note-body p {
+  margin: 0;
+  padding: 0;
+}
+
+.note-body b,
+.note-body strong {
+  font-weight: bold;
+}
+
+.note-body i,
+.note-body em {
+  font-style: italic;
+}
+
+.note-body u {
+  text-decoration: underline;
+} */

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import AuthForm from './components/AuthForm';
-import ProfileViewer from './components/ProfileViewer';
-import NotesList from './components/NotesList';
-import { isLoggedIn } from './api';
+import AuthForm from './components/Auth/AuthForm';
+import ProfileViewer from './components/ProfileViewer/ProfileViewer';
+import NotesList from './components/Notes/NotesList';
+import { UserAPI } from './api/UserAPI';
 
 const App: React.FC = () => {
   const [username, setUsername] = useState<string>("");
@@ -13,7 +13,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const authStatus = await isLoggedIn();
+        const authStatus = await UserAPI.isLoggedIn();
         setIsAuthenticated(authStatus.authenticated);
         setUsername(authStatus.username);
         setNickname(authStatus.nickname);

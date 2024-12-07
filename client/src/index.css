@@ -1,6 +1,6 @@
 :root {
-  --primary-background: #dff8bd;
-  --secondary-background: #f5f3ea;
+  --primary-background: #fcf5df;
+  --secondary-background: #efede6;
   --text-color: #95a5a6;
   --accent-color: #1abc9c;
   --hover-color: #bdc3c7;
@@ -60,6 +60,10 @@ body {
   box-shadow: var(--box-shadow);
   z-index: 3;
   background-color: var(--secondary-background);
+}
+
+h1 {  
+  padding-left:10px;
 }
 
 code {
