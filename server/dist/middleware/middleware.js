@@ -2,12 +2,13 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const log_1 = __importDefault(require("../config/log"));
-const frontendURI = process.env.frontendURI || 'http://localhost:3000';
+const frontendURI = (_a = process.env.frontendURI) !== null && _a !== void 0 ? _a : 'http://localhost:3000';
 // CORS configuration
 const corsOptions = {
     origin: frontendURI,

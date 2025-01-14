@@ -30,6 +30,7 @@
   right: 0;
   top: calc(100% + 10px);
   width: calc(100vw - 4rem);
+  max-width: 250px;
   background-color: var(--primary-background);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);

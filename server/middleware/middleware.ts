@@ -3,7 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import logger from '../config/log';
 
-const frontendURI = process.env.frontendURI || 'http://localhost:3000';
+const frontendURI = process.env.frontendURI ?? 'http://localhost:3000';
 
 // CORS configuration
 const corsOptions = {
