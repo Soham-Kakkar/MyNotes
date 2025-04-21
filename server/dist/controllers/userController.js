@@ -54,6 +54,8 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.cookie('authToken', token, {
             httpOnly: true,
             maxAge: 5 * 24 * 60 * 60 * 1000,
+            sameSite: 'strict',
+            secure: true,
         });
         res.json({ message: 'Logged in successfully' });
         return;
