@@ -10,6 +10,8 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
+app.set('trust proxy', true);
+
 app.use(...middleware);
 
 app.use('/api/users', userApiLimiter, userRoutes);
