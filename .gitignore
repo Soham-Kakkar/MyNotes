@@ -1,0 +1,10 @@
+server/*.log
+server/package-lock.json
+server/node_modules
+server/dist
+server/.env
+
+client/build
+client/package-lock.json
+client/node_modules
+client/.env
