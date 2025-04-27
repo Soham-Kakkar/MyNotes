@@ -68,8 +68,8 @@ To set up the application locally, follow these steps:
 
      ```bash
      cd client
-     npm install       # Install frontend dependencies
-     npm run start     # Start the React app
+     npm install    # Install frontend dependencies
+     npm run start  # Start the React app
      ```
 
 5. Open the app in your browser at http://localhost:3000.
